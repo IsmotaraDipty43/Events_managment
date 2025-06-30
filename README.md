@@ -1,12 +1,63 @@
-# React + Vite
+# 🌟 Organizo – Event Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Organizo** is a fully responsive and dynamic **Event Management Website** built using modern web technologies. It allows users to create, explore, join, update, and delete events seamlessly.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+👉 [Organizo Live Site](https://events-managmnet-project43.netlify.app)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📝 Features
+
+- ✅ **User Authentication**  
+  - Sign Up / Login  
+  - Protected Private Routes  
+
+- ✅ **Add Event**  
+  - Authenticated users can add their own events.
+
+- ✅ **My Events**  
+  - View all events posted by the current user.  
+  - Update or delete your posted events.  
+
+- ✅ **Explore Events**  
+  - Browse all posted events.  
+  - Filter by date (Today, Week, Month).  
+  - Search events by title.
+
+- ✅ **Join Event Button**  
+  - Users can join any event only once.  
+  - Attendee count updates instantly.
+
+- ✅ **Dynamic Error & Success Messages**  
+  - User actions are validated with alert feedback.
+
+- ✅ **Responsive Design**  
+  - Works perfectly on all screen sizes – desktop, tablet, and mobile.
+
+---
+
+## 🧰 Technologies Used
+
+### 🖼️ Frontend
+
+- **HTML5**
+- **Tailwind CSS**
+- **React.js**
+- **React Router DOM**
+- **React Helmet**
+- **SweetAlert2** (for user-friendly alerts)
+
+### 🔧 Backend
+
+- **Node.js**
+- **Express.js**
+- **MongoDB**
+- **CORS**
+- **dotenv**
+
+
+v
