@@ -48,7 +48,7 @@ const EventHighlights = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
           Why Choose Organizo
         </h2>
-        <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+        <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
           Discover what makes Organizo events truly unique – from global experts to lively after-parties, we offer a complete experience you won’t forget.
         </p>
       </div>
@@ -65,7 +65,7 @@ const EventHighlights = () => {
             <h3 className="text-xl font-bold text-gray-800 text-center mb-2">
               {item.title}
             </h3>
-            <p className="text-sm text-gray-600 text-center mb-4">
+            <p className=" text-gray-600 text-center mb-4 text-base">
               {item.description}
             </p>
             <div className="flex-grow"></div>

@@ -20,7 +20,7 @@ const ReviewCard = ({ review }) => (
       padding: 15,
       borderRadius: 8,
       boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
-      fontSize: 12,
+      fontSize: 16,
       boxSizing: "border-box",
     }}
   >

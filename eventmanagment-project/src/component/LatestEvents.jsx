@@ -32,7 +32,7 @@ const LatestEvents = () => {
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-2">
         Upcoming Events
       </h2>
-      <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+      <p className="text-center text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
         Discover and attend the latest events happening around you. Join the experience, network, and grow.
       </p>
 

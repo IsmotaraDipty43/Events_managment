@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Logo and Description */}
         <div>
           <img src={logo} alt="Organizo Logo" className="h-12 mb-4" />
-          <p className="text-sm">
+          <p className="text-base">
             Organizo is your all-in-one event management partner, making moments unforgettable.
           </p>
         </div>
@@ -28,15 +28,15 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Contact</h3>
-          <p className="text-sm">Phone: +880 1234 567890</p>
-          <p className="text-sm">Email: support@organizo.com</p>
-          <p className="text-sm">Location: Dhaka, Bangladesh</p>
+          <p className="text-base">Phone: +880 1234 567890</p>
+          <p className="text-base">Email: support@organizo.com</p>
+          <p className="text-base">Location: Dhaka, Bangladesh</p>
         </div>
 
         {/* Email Subscription */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Subscribe</h3>
-          <p className="text-sm mb-3">Get updates and offers directly in your inbox.</p>
+          <p className="text-base mb-3">Get updates and offers directly in your inbox.</p>
           <form className="flex flex-col sm:flex-row items-center gap-3">
             <input
               type="email"
@@ -54,15 +54,15 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
+      <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-base">
         <p className="text-gray-500 mb-4 md:mb-0">
           © {new Date().getFullYear()} Organizo. All rights reserved.
         </p>
         <div className="flex gap-4 text-lg">
-          <a href="#" className="hover:text-white"><FaFacebookF /></a>
-          <a href="#" className="hover:text-white"><FaTwitter /></a>
-          <a href="#" className="hover:text-white"><FaInstagram /></a>
-          <a href="#" className="hover:text-white"><FaEnvelope /></a>
+          <a href="#" className="hover:text-white text-lg"><FaFacebookF /></a>
+          <a href="#" className="hover:text-white text-lg"><FaTwitter /></a>
+          <a href="#" className="hover:text-white text-lg"><FaInstagram /></a>
+          <a href="#" className="hover:text-white text-lg"><FaEnvelope /></a>
         </div>
       </div>
     </footer>
