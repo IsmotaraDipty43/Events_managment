@@ -3,12 +3,12 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { IoMdLogIn } from 'react-icons/io';
 import { RiLogoutCircleLine } from 'react-icons/ri';
 import logo from '../assets/logo.png';
-import { useAuth } from '../AuthContext'; // Auth context hook
+import { useAuth } from '../AuthContext'; 
 
 const Navber = () => {
   const { user, logoutUser } = useAuth();
-  const [dropdownOpen, setDropdownOpen] = useState(false); // user dropdown
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // mobile nav menu
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -20,7 +20,7 @@ const Navber = () => {
   const toggleDropdown = () => setDropdownOpen((prev) => !prev);
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
 
-  // Nav links array (used for desktop and mobile menu)
+
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/events', label: 'Events' },

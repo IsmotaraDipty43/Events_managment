@@ -1,20 +1,18 @@
-// src/context/AuthContext.js
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-// localStorage keys
+
 const USERS_KEY = 'registeredUsers';
 const LOGGED_IN_USER_KEY = 'loggedInUser';
 
-// Create the Auth context
 const AuthContext = createContext();
 
-// Provider component
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // loading state for async actions
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    // Load logged-in user from localStorage on mount
     const loggedUser = localStorage.getItem(LOGGED_IN_USER_KEY);
     if (loggedUser) {
       setUser(JSON.parse(loggedUser));
@@ -22,11 +20,11 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  // Register a new user
+
   const registerUser = (userData) => {
     const users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
 
-    // Check if email already registered
+  
     const exists = users.find(u => u.email === userData.email);
     if (exists) {
       return { success: false, message: 'Email already registered' };
@@ -38,7 +36,7 @@ export const AuthProvider = ({ children }) => {
     return { success: true, message: 'Registration successful' };
   };
 
-  // Login a user
+
   const loginUser = (email, password) => {
     const users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
 
@@ -60,13 +58,12 @@ export const AuthProvider = ({ children }) => {
     return { success: true, message: 'Login successful', user: userData };
   };
 
-  // Logout current user
+
   const logoutUser = () => {
     localStorage.removeItem(LOGGED_IN_USER_KEY);
     setUser(null);
   };
 
-  // Get current user info
   const getLoggedInUser = () => user;
 
   return (
@@ -85,5 +82,5 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Hook to consume AuthContext easily
+
 export const useAuth = () => useContext(AuthContext);

@@ -3,12 +3,13 @@ import { useAuth } from '../AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 const MyEvents = () => {
   const { user } = useAuth();
   const [myEvents, setMyEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editingEvent, setEditingEvent] = useState(null);
-
+ const navigate = useNavigate();
   const fetchMyEvents = async () => {
     try {
       const res = await axios.get(`https://eventmanagment-flax.vercel.app/api/events/user-events?email=${user?.email}`);
@@ -52,7 +53,7 @@ const MyEvents = () => {
     e.preventDefault();
 
     try {
-      await axios.put(`https://eventmanagment-flax.vercel.app/api/events/${editingEvent._id}`, editingEvent);
+           await axios.patch(`https://eventmanagment-flax.vercel.app/api/events/${editingEvent._id}`, editingEvent);
       Swal.fire('Updated!', 'Event updated successfully.', 'success');
       setEditingEvent(null);
       fetchMyEvents();
@@ -99,12 +100,12 @@ const MyEvents = () => {
                 <p className="text-base text-gray-500 mt-2 mb-4">Attendees: {event.attendeeCount}</p>
 
                 <div className="mt-auto flex gap-3">
-                  <button
-                    onClick={() => setEditingEvent(event)}
-                    className="min-w-[100px] bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
-                  >
-                    Update
-                  </button>
+                <button
+  onClick={() => navigate(`/update/${event._id}`)}
+  className="min-w-[100px] bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
+>
+  Update
+</button>
                   <button
                     onClick={() => handleDelete(event._id)}
                     className="min-w-[100px] bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
@@ -118,113 +119,7 @@ const MyEvents = () => {
         </div>
       )}
 
-    {editingEvent && (
-  <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-    <form
-      onSubmit={handleUpdateSubmit}
-      className="bg-white rounded-lg shadow-xl max-w-lg w-full p-8 relative
-                 animate-fadeIn"
-    >
-      {/* Close Icon */}
-      <button
-        type="button"
-        onClick={() => setEditingEvent(null)}
-        aria-label="Close modal"
-        className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-
-      <h2 className="text-2xl font-semibold mb-6 text-gray-900">Update Event</h2>
-
-      <input
-        name="title"
-        value={editingEvent.title}
-        onChange={handleEditChange}
-        placeholder="Title"
-        className="w-full border border-gray-300 rounded-md p-3 mb-4
-                   focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-        required
-      />
-
-      <input
-        name="postedBy"
-        value={editingEvent.postedBy}
-        onChange={handleEditChange}
-        placeholder="Posted By"
-        className="w-full border border-gray-300 rounded-md p-3 mb-4
-                   focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-        required
-      />
-
-      <input
-        type="datetime-local"
-        name="dateTime"
-        value={new Date(editingEvent.dateTime).toISOString().slice(0, 16)}
-        onChange={handleEditChange}
-        className="w-full border border-gray-300 rounded-md p-3 mb-4
-                   focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-        required
-      />
-
-      <input
-        name="location"
-        value={editingEvent.location}
-        onChange={handleEditChange}
-        placeholder="Location"
-        className="w-full border border-gray-300 rounded-md p-3 mb-4
-                   focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-        required
-      />
-
-      <textarea
-        name="description"
-        value={editingEvent.description}
-        onChange={handleEditChange}
-        rows="4"
-        placeholder="Description"
-        className="w-full border border-gray-300 rounded-md p-3 mb-6
-                   focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-        required
-      />
-
-      <input
-        name="image"
-        value={editingEvent.image}
-        onChange={handleEditChange}
-        placeholder="Image URL"
-        className="w-full border border-gray-300 rounded-md p-3 mb-6
-                   focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
-        required
-      />
-
-      <div className="flex justify-end gap-4">
-        <button
-          type="button"
-          onClick={() => setEditingEvent(null)}
-          className="bg-gray-300 text-gray-700 px-5 py-2 rounded-md hover:bg-gray-400 transition"
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          className="bg-amber-600 text-white px-5 py-2 rounded-md hover:bg-amber-700 transition"
-        >
-          Save
-        </button>
-      </div>
-    </form>
-  </div>
-)}
+   
 
     </div>
    </div> 

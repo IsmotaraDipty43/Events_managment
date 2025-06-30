@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useAuth } from '../AuthContext'; // import context hook
+import { useAuth } from '../AuthContext'; 
 import { Helmet } from 'react-helmet';
 const Register = () => {
   const [form, setForm] = useState({
@@ -13,7 +13,7 @@ const Register = () => {
 
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { registerUser } = useAuth();  // get registerUser function from context
+  const { registerUser } = useAuth();  
 
   const validate = () => {
     if (form.name.trim().length < 5) {
@@ -46,7 +46,7 @@ const Register = () => {
 
     if (!validate()) return;
 
-    // Use context registerUser instead of localStorage directly
+  
     const result = registerUser(form);
 
     if (result.success) {
@@ -57,7 +57,7 @@ const Register = () => {
         confirmButtonColor: '#4f46e5',
       });
       setForm({ name: '', email: '', password: '', image: '' });
-      navigate('/login');  // redirect to login page after registration
+      navigate('/login');  
     } else {
       setError(result.message);
     }

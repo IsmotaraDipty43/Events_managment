@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useAuth } from '../AuthContext'; // make sure this path is correct
+import { useAuth } from '../AuthContext'; 
 import { Helmet } from 'react-helmet';
 const AddEvent = () => {
-  const { user } = useAuth(); // Get logged-in user from context
+  const { user } = useAuth(); 
 
   const [formData, setFormData] = useState({
     title: '',
@@ -24,8 +24,8 @@ const AddEvent = () => {
     if (user) {
       setFormData(prev => ({
         ...prev,
-        email: user.email,        // prefill email
-        postedBy: user.name       // optionally set postedBy from user name
+        email: user.email,        
+        postedBy: user.name       
       }));
     }
   }, [user]);

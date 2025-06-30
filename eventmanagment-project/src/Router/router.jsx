@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import PrivateRoute from "../Pages/PrivateRoute";
 import Events from "../Pages/Events";
 import MyEvents from "../Pages/MyEvents";
+import Update from "../Pages/Update";
 
 const router = createBrowserRouter([
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         {
           path:"/myevents",
           element:<PrivateRoute><MyEvents></MyEvents></PrivateRoute>
+        },
+         {
+          path:"/update/:id",
+          element:<PrivateRoute><Update></Update></PrivateRoute>
         }
       ]
 

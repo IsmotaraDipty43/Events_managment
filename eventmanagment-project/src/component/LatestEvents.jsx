@@ -8,7 +8,7 @@ const LatestEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('https://eventmanagment-flax.vercel.app/events'); // replace with your backend URL
+        const response = await axios.get('https://eventmanagment-flax.vercel.app/events'); 
         const allEvents = response.data;
 
         const now = new Date();
