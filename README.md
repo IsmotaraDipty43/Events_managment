@@ -1,4 +1,4 @@
-# 🌟 Organizo – Event Management Platform
+# Organizo – Event Management Platform
 
 **Organizo** is a fully responsive and dynamic **Event Management Website** built using modern web technologies. It allows users to create, explore, join, update, and delete events seamlessly.
 
@@ -60,4 +60,4 @@
 - **dotenv**
 
 
-v
+
