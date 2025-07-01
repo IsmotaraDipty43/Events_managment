@@ -2,7 +2,7 @@ import React from "react";
 import banner from '../assets/imagebanner.jpg'
 const HomeFocusSection = () => {
   return (
-    <section className="bg-gray-50 py-16 px-6 sm:px-12 lg:px-20">
+    <section className="bg-gray-50 py-10 px-6 sm:px-12 lg:px-20">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         {/* Left Text */}
         <div className="lg:w-1/2">

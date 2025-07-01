@@ -21,12 +21,16 @@ const Home = () => {
         </div>
       
         <LatestEvents></LatestEvents>
-        <EventHighlights></EventHighlights>
+                <OurMission></OurMission>
+       
        
             <div className='mt-20 mb-10'>
              <ReviewMarquee></ReviewMarquee>
+         
         </div>
-        <OurMission></OurMission>
+  <div className='mb-20 mt-20'>
+        <EventHighlights></EventHighlights>
+  </div>
     
         </div>
          </>

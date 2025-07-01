@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../AuthContext';  // import your AuthContext hook
+import { useAuth } from '../AuthContext';  
 import { Helmet } from 'react-helmet';
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const navigate = useNavigate();
-  const { loginUser } = useAuth();  // get loginUser function from context
+  const { loginUser } = useAuth(); 
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -34,7 +34,7 @@ const Login = () => {
         text: result.message,
         confirmButtonColor: '#4f46e5',
       }).then(() => {
-        navigate('/');  // redirect after alert closes
+        navigate('/'); 
       });
     } else {
       Swal.fire({

@@ -87,7 +87,7 @@ const ReviewMarquee = () => {
   if (reviews.length === 0) return <p>No reviews available.</p>;
 
   return (
-    <div style={{ backgroundColor: "#fff", padding: "20px 10px", width: "100%" }}>
+    <div style={{ backgroundColor: "#fff", padding: "10px 10px", width: "100%" }}>
       {/* Title and Description */}
       <div style={{ textAlign: "center", marginBottom: 30 }}>
         <h2 style={{ fontSize: 24, fontWeight: "bold", marginBottom: 8, color: "#111827" }}>
